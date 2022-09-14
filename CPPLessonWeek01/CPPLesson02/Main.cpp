@@ -65,10 +65,10 @@ void Char()
 void Boolean()
 {
 	using namespace std;
-	// 非假即为
+	// 非假即为真
 	int b = 1000;
 	if (b) {
-
+		cout << "非假即为真";
 	}
 	// ture == 1 false == 0
 	cout << "true = " << true << endl;
@@ -94,6 +94,59 @@ void Float()
 	cout << setprecision(7) << f << endl;
 }
 
+
+// 算数运算符
+void ArithmeticOperators()
+{
+	using namespace std;
+	// 除法 /
+	int i = 100;
+	int b = 100 / 3;
+	float f = 100 / 3.0f;
+	// 注意除法返回结果的类型
+	cout << "int 100 / 3 = 整数" << b << endl;
+	cout << "float 100 / 3 = 浮点数" << f << endl;
+
+	// % 取余
+	// 取余常用于计算行和列，以及固定次数后执行一次操作
+	// 除法和取余 后面的运算数为0时会导致运行时报错
+
+	// ++ --
+	//	1. 后置++，先执行当前行的其他逻辑，再执行++逻辑
+	i = 100;
+	cout << "后置++，先执行cout再执行++：" << i++ << endl;
+	//	2. 前置++，先执行++逻辑再执行当前行逻辑
+	i = 100;
+	cout << "前置++，先执行++再执行cout：" << ++i << endl;
+}
+
+// 三元运算符
+void TernaryOperation()
+{
+	using namespace std;
+	int i = 0;
+	cout << "int i = 0;" << endl;
+	i == 0 ? i = 1 : i = 2;
+	cout << "三元运算：i == 0 ？ i = 1 ： i= 2 结果：" << i << endl;
+
+	// 三元运算的嵌套
+	string res = i == 0 ? "i为0" : i < 0 ? "i小于0" : "i大于0";
+	cout << "三元嵌套：i == 0 ? i为0 : i < 0 ? i小于0 : i大于0  结果：" << res << endl;
+}
+
+// 流程控制
+void IfElse()
+{
+	// 逻辑体内只有一行逻辑时可以省略大括号
+	int a = 0;
+	if (a == 0) a = 1;
+	// 建议换行
+	if (a == 0)
+		a = 1;
+	else
+		a = 0;
+}
+
 // 数据类型
 int main()
 {
@@ -101,5 +154,7 @@ int main()
 	Char();
 	Boolean();
 	Float();
+	ArithmeticOperators();
+	TernaryOperation();
 	system("pause");
 }
