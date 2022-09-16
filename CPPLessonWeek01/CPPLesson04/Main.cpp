@@ -69,6 +69,28 @@ void Sort02()
 	cout << endl;
 }
 
+// ²åÖµÅÅÐò
+void Sort03()
+{
+	using namespace std;
+	int numbers[]{ 2, 3, 6, 1, 29, 32, 12, 33 };
+	int numbers_size = sizeof(numbers) / sizeof(int);
+
+	for (int i = 0; i < numbers_size; i++)
+	{
+		for (int j = 0; j < i; j++)
+		{
+			if (numbers[i] < numbers[j])
+			{
+				int temp_number = numbers[i];
+				numbers[i] = numbers[j];
+				numbers[j] = temp_number;
+			}
+		}
+	}
+	for (int n : numbers) cout << n << ",";
+	cout << endl;
+}
 
 // 1. ¼ÆËã100ÄÚµÄËØÊý(Ö»ÄÜ±»1ºÍ×ÔÉíÕû³ýµÄÊý)
 void Test01()
@@ -244,8 +266,9 @@ void Test09()
 int main()
 {
 	//WhileLoop();
-	//Sort01(); // Ã°ÅÝÅÅÐò
-	//Sort02(); // Ë³ÐòÅÅÐò
+	Sort01(); // Ã°ÅÝÅÅÐò
+	Sort02(); // Ë³ÐòÅÅÐò
+	Sort03(); // ²åÖµÅÅÐò
 	//Test01();
 	//Test02();
 	//Test03();
@@ -254,6 +277,6 @@ int main()
 	//Test06();
 	//Test07();
 	//Test08();
-	Test09();
+	//Test09();
 	system("pause");
 }
