@@ -1,0 +1,3 @@
+﻿  Main.cpp
+D:\Workspace\CPPProject\CPP\CPPLessonWeek01\CPPLesson05\Main.cpp(39): warning C4172: 返回局部变量或临时变量的地址: numbers
+  CPPLesson05.vcxproj -> D:\Workspace\CPPProject\CPP\CPPLessonWeek01\x64\Debug\CPPLesson05.exe

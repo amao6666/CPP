@@ -1,5 +1,0 @@
-﻿  Main.cpp
-D:\Workspace\CPPProject\CPP\CPPLessonWeek01\Lesson05\Main.cpp(58,7): warning C4101: “numbers1”: 未引用的局部变量
-D:\Workspace\CPPProject\CPP\CPPLessonWeek01\Lesson05\Main.cpp(59,7): warning C4101: “numbers2”: 未引用的局部变量
-D:\Workspace\CPPProject\CPP\CPPLessonWeek01\Lesson05\Main.cpp(39): warning C4172: 返回局部变量或临时变量的地址: numbers
-  Lesson05.vcxproj -> D:\Workspace\CPPProject\CPP\CPPLessonWeek01\x64\Debug\CPPLesson05.exe
