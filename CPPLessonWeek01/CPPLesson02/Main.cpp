@@ -59,6 +59,13 @@ void Char()
 	{
 		cout << "char A：" << c2 << endl;
 	}
+
+	// char 类型的数组如果没有声明数字组的大小会多申请一个空字符占位 \0
+
+	char numbers[10]{}; // -> 10个字节
+	char numbers1[]{ "张三" }; // -> 4 + 1 = 5个字节
+	// 字符类型的数组会直接cout全部内容
+	cout << numbers1 << endl; // -> 会打印 张三
 }
 
 // 布尔型
