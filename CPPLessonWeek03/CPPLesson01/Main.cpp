@@ -138,6 +138,6 @@ int main()
 	GetRandomValue();
 	GetRandomValue();
 	GetRandomValue();
-	
+
 	system("pause");
 }
