@@ -108,8 +108,10 @@ public:
 class Weapon
 {
 public:
+	int damage;
 	void Test1()
 	{
+		cout << damage << endl;
 		cout << typeid(this).name() << endl;
 	}
 
@@ -122,12 +124,16 @@ public:
 class Gone : public Weapon
 {
 public:
+	Gone()
+	{
+		damage = 100;
+	}
 	/*void Test1()
 	{
 		cout << "Gone  " << typeid(this).name() << endl;
 	}*/
 
-	virtual void Test2()
+	virtual void Test2(int a)
 	{
 		cout << "Gone  " << typeid(this).name() << endl;
 	}
@@ -153,11 +159,16 @@ int main()
 
 	Gone gone;
 	gone.Test1();
-	gone.Test2();
+	gone.Test2(2);
 
 	Weapon* weapon1 = &gone;
-	weapon1->Test1();
-	weapon1->Test2();
+	weapon1->Test1(); // Test1()不是虚函数，所以调用Weapon类型里的函数
+	weapon1->Test2(); // Test2()是虚函数，所以调用实例对象里的虚函数
+
+	// 虚函数原理：
+	// 1. 类里有虚函数时，在创建实例时会将V-table（虚函数表）存到对象里。
+	// 2. 继承时，子类对象会将父类的虚函数表放在前面，如果子类重定义父类的虚函数，会使用子类的虚函数替换V-table的函数指针。
+	// 3. 调用时先根据实例的v-ptr找到v-table从而找到调用的虚函数指针，然后进行调用。
 
 	Weapon* weapon = new Gone;
 	weapon->Test1();
